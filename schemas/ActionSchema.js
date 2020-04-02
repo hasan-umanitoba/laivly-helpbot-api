@@ -4,12 +4,17 @@ var Schema = mongoose.Schema;
 // Define collection and schema for Items
 var ActionSchema = new Schema(
     {
-        expression: {
+        type: {
+            type: String,
+            required: false, 
+            default: 'message'
+        },
+        pattern: {
             type: String,
             required: true
         },
-        action: {
-            type: String,
+        response: {
+            type: Object,
             required: true
         },
         priority: {
