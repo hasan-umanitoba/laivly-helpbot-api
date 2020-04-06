@@ -2,11 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // Define collection and schema for Items
-var ActionSchema = new Schema(
+var ListenerSchema = new Schema(
     {
         type: {
             type: String,
-            required: false, 
             default: 'message'
         },
         pattern: {
@@ -19,8 +18,11 @@ var ActionSchema = new Schema(
         },
         priority: {
             type: Number,
-            required: false,
             default: 1000
+        },
+        options: {
+            type: Object,
+            default: {}
         },
         isActive: {
             type: Boolean,
@@ -34,8 +36,8 @@ var ActionSchema = new Schema(
         }
     },
     {
-        collection: 'actions'
+        collection: 'listeners'
     }
 );
 
-module.exports = mongoose.model('Action', ActionSchema);
+module.exports = mongoose.model('Listener', ListenerSchema);

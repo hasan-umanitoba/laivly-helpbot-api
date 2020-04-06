@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const actionRouter = require('./action-router');
+const listenerRouter = require('./listener-router');
 
 router
-  .use('/actions', actionRouter)
+  .use('/listeners', listenerRouter)
   //.use('/test', testRouter)
 ;
 
